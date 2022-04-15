@@ -18,7 +18,7 @@ Automate settup of rasberry pi cluster with any number of rasberry pi's to verti
 insert sd card and find its acces path.
 
 ```bash
-sd | grep sd
+df | grep sd
 ```
  
 here sd is the charachters likely to be an sd card this may change depending on media 
@@ -41,5 +41,17 @@ format card using mkfs
 ```bash
 sudo mkfs.vfat -F32 -v /dev/sda
 ```
+#2 getting ubuntu server or other raspberry py compatible os.
+
+you can choose your falvours [here](https://ubuntu.com/download/raspberry-pi)
 
 
+
+#3 cretating a disk image from compressed
+
+uzing xz to decompress and then pipe into dd, /dev/sda is the location of unmounted sd card on see 'Filesystem' column above.
+
+```bash
+xzcat ubuntu-20.04.4-preinstalled-server-arm64+raspi.img.xz | sudo dd of=/dev/sda bs=32M status=progress
+```
+further details on this can be found [here](https://askubuntu.com/questions/1193232/how-do-i-use-an-img-xz-file-or-get-an-img-file-from-it)
