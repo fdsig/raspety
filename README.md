@@ -45,7 +45,9 @@ sudo mkfs.vfat -F32 -v /dev/sda
 
 you can choose your falvours [here](https://ubuntu.com/download/raspberry-pi)
 
-
+```bash
+wget https://cdimage.ubuntu.com/releases/20.04.4/release/ubuntu-20.04.4-preinstalled-server-arm64+raspi.img.xz
+```
 
 #3 cretating a disk image from compressed
 
