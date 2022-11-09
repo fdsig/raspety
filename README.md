@@ -57,3 +57,25 @@ uzing xz to decompress and then pipe into dd, /dev/sda is the location of unmoun
 xzcat ubuntu-20.04.4-preinstalled-server-arm64+raspi.img.xz | sudo dd of=/dev/sda bs=32M status=progress
 ```
 further details on this can be found [here](https://askubuntu.com/questions/1193232/how-do-i-use-an-img-xz-file-or-get-an-img-file-from-it)
+
+
+UI Install:
+
+This might be simpler that using the above, and satisfactory if like me you enjoy repetition.
+
+- [ ] dowload ubuntu server image
+- [ ] use belina etcher to flash image
+- [ ] watch this video while your flashing [here](https://www.youtube.com/watch?v=GVgMM_TFeOw)
+- [ ] follow instructions for seeting up microk8s [here](https://ubuntu.com/tutorials/how-to-kubernetes-cluster-on-raspberry-pi#1-overview)
+- [ ]  set up images for use with kubernetes
+
+## To Do:
+
+- [ ] add actual bash commands
+- [ ] set up mysql
+- [ ] create tar file of image and deploy with wandb image 
+
+```bash
+docker save mynginx > myimage.tar
+microk8s ctr image import myimage.tar
+```
